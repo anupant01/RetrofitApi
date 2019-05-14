@@ -60,10 +60,9 @@ public class SearchEmployeeActivity extends AppCompatActivity {
                 content += "Name : " + response.body().getEmployee_name() + "\n";
                 content += "Salary : " + response.body().getEmployee_salary() + "\n";
                 content += "Age : " + response.body().getEmployee_age() + "\n";
+                content += "-------------------------------" +"\n";
 
-
-
-                tvData.append(content);
+                tvData.setText(content);
 
             }
 
