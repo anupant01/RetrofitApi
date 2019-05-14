@@ -16,6 +16,7 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         btnShow = findViewById(R.id.btnShow);
+        btnSearch=findViewById(R.id.btnSearch);
 
 
 
@@ -23,6 +24,15 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DashboardActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this,SearchEmployeeActivity.class);
                 startActivity(intent);
             }
         });
