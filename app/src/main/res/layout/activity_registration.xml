@@ -7,6 +7,37 @@
     android:orientation="vertical"
     tools:context=".RegistrationActivity">
 
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"/>
+
+    <EditText
+        android:id="@+id/etSalary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Salary"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"/>
+
+
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Age"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"/>
+
 
     <Button
         android:id="@+id/btnReg"
