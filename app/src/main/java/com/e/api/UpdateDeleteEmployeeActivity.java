@@ -1,7 +1,7 @@
 package com.e.api;
 
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
+
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +25,6 @@ public class UpdateDeleteEmployeeActivity extends AppCompatActivity {
     private Button btnSearch, btnDelete, btnUpdate;
     Retrofit retrofit;
     EmployeeAPI employeeAPI;
-    AlertDialog.Builder alert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +38,6 @@ public class UpdateDeleteEmployeeActivity extends AppCompatActivity {
         btnSearch = findViewById(R.id.btnSearch);
         btnDelete = findViewById(R.id.btnDelete);
         btnUpdate = findViewById(R.id.btnUpdate);
-        alert = new AlertDialog.Builder(this);
 
 
 
@@ -65,28 +63,6 @@ public class UpdateDeleteEmployeeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 deleteEmployee();
-
-                alert.setMessage("Do you want to delete?")
-                        .setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                deleteEmployee();
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog alertDialog =  alert.create();
-                alertDialog.setTitle("Delete Employee");
-                alertDialog.show();
-
-                clear();
-
-
 
                     }
                 });
@@ -152,8 +128,10 @@ public class UpdateDeleteEmployeeActivity extends AppCompatActivity {
                 Toast.makeText(UpdateDeleteEmployeeActivity.this, "Error"+t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
 
             }
+        });
 
-    });
+        Intent intent = new Intent(UpdateDeleteEmployeeActivity.this,DashboardActivity.class);
+        startActivity(intent);
     }
 
 
@@ -176,6 +154,9 @@ public class UpdateDeleteEmployeeActivity extends AppCompatActivity {
                 Toast.makeText(UpdateDeleteEmployeeActivity.this,"Error "+ t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
             }
         });
+
+        Intent intent = new Intent(UpdateDeleteEmployeeActivity.this,DashboardActivity.class);
+        startActivity(intent);
 
 
     }

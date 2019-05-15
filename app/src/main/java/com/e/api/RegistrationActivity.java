@@ -1,5 +1,6 @@
 package com.e.api;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -70,6 +71,9 @@ public class RegistrationActivity extends AppCompatActivity {
                         "Error :" + t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
             }
         });
+
+        Intent intent = new Intent(RegistrationActivity.this,DashboardActivity.class);
+        startActivity(intent);
     }
 
     private void clear(){
