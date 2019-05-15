@@ -76,6 +76,7 @@ public class RegistrationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    
     private void clear(){
         etName.setText("");
         etSalary.setText("");
