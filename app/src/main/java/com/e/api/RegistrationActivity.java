@@ -37,6 +37,7 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Register();
+                clear();
             }
         });
 
@@ -69,5 +70,12 @@ public class RegistrationActivity extends AppCompatActivity {
                         "Error :" + t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void clear(){
+        etName.setText("");
+        etSalary.setText("");
+        etAge.setText("");
+
     }
 }
